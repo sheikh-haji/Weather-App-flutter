@@ -11,4 +11,4 @@
 
 
 
-<video src="https://user-images.githubusercontent.com/64357406/181301038-425b7f03-7705-4096-b27a-99dcc12a2674.mp4"    controls muted style="max-height:640px;"></video>
+<video src="https://user-images.githubusercontent.com/64357406/181301038-425b7f03-7705-4096-b27a-99dcc12a2674.mp4"    controls autoplay muted style="max-height:640px;"></video>
