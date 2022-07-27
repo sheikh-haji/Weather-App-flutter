@@ -6,6 +6,8 @@
 -This project is mostly based on asynchronous programming (all the api calls are asynchronous that await and async function)
 <br/>
 
-<video src="https://drive.google.com/file/d/1rl2eCWo4FefS1tm1qAiDBs_xYMk3UAEQ/view?usp=sharing"  controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-height:640px;">
 
-  </video>
+
+https://user-images.githubusercontent.com/64357406/181301038-425b7f03-7705-4096-b27a-99dcc12a2674.mp4
+
+
