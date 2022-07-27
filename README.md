@@ -1,16 +1,7 @@
 # weather_app
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+-It is Flutter that uses OpenWeatherMap Api to get the temperature of the user location
+<br/>
+-it uses Mapbox API to locate the user's location and custom Location by given by the user
+<br />
+-This project is mostly based on asynchronous programming (all the api calls are asynchronous that await and async function)
+<br/>
