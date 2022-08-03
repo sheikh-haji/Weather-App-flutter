@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/screens/city_screen.dart';
-import 'package:weather_app/screens/about.dart';
 import 'package:weather_app/services/weather.dart';
 import 'package:weather_app/services/map.dart';
 import 'package:weather_app/utilities/constants.dart';
 import 'package:geolocator/geolocator.dart';
+// import 'package:url_launcher/url_launcher.dart';
+import 'package:weather_app/screens/menubar.dart';
+import 'package:weather_app/screens/info.dart';
 
 class LocationScreen extends StatefulWidget {
   final locationweather;
@@ -59,16 +61,55 @@ class _LocationScreenState extends State<LocationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        drawer:  Drawer(
+          elevation: 20.0,
+          child: NavDrawer(() async{
+              print('hello');
+            await Navigator.push(context,
+                MaterialPageRoute(builder: (context) {
+                  return MyApp(data: weatherdata);
+                }));
+
+          },() async {
+            var weatherdata1 = await WeatherModel().getweatherdata();
+            setState(() {
+              weatherdata = weatherdata1;
+              // dynamic weatherdata=1;
+              updateUI(weatherdata);
+            });
+            Navigator.pop(context);
+          },() async{
+
+            var cityname = await Navigator.push(context,
+                MaterialPageRoute(builder: (context) {
+                  return CityScreen();
+                }));
+            // city=cityname;
+            print(cityname+'callback');
+            if (cityname == 'N') {
+              return;
+            }
+
+            var weatherdata1 = await WeatherModel().getweathercitydata(cityname);
+            // dynamic weatherdata=1;
+            setState(() {
+              weatherdata=weatherdata1;
+              updateUI(weatherdata);
+            });
+             Navigator.pop(context);
+
+          }),
+        ),
       appBar: AppBar(
-          leading: Builder(
-            builder: (BuildContext context) {
-              return IconButton(
-                icon: const Icon(Icons.menu),
-                onPressed: () {},
-                tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
-              );
-            },
-          ),
+          // leading: Builder(
+          //   builder: (BuildContext context) {
+          //     return IconButton(
+          //       icon: const Icon(Icons.menu),
+          //       onPressed: () {},
+          //       tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+          //     );
+          //   },
+          // ),
           title: Text('Weather',
               style: TextStyle(
                 fontFamily: 'Pacifico',

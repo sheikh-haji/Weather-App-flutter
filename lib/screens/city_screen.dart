@@ -66,6 +66,7 @@ class _CityScreenState extends State<CityScreen> {
               Container(
                 padding: EdgeInsets.all(15.0),
                 child: TextField(
+                  autofocus: true,
                   onChanged: (String city) {
                     // print()
                     // print(city);
@@ -100,7 +101,7 @@ class _CityScreenState extends State<CityScreen> {
                 padding: EdgeInsets.all(20.0),
                 child: null,
               ),
-              FlatButton(
+              TextButton(
                 onPressed: () {
                   Navigator.pop(context,cityname);
                 },

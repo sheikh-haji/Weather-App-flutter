@@ -89,7 +89,7 @@ class _MyAppState extends State<MyApp> {
             layers: [
               TileLayerOptions(
                 urlTemplate:
-                "YOUR MAPBOX API",
+                "https://api.mapbox.com/styles/v1/sheikh118/cl62icjgh000y14s5z9gcwtdx/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoic2hlaWtoMTE4IiwiYSI6ImNsNWtwaWJlbjBhaTEzcGp2M21vYXk0amEifQ.WWwrnJ23ZEs7RsEGY5Ywig",
                 additionalOptions: {
                   'mapStyleId': AppConstants.mapBoxStyleId,
                   'accessToken': AppConstants.mapBoxAccessToken,

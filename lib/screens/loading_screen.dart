@@ -59,7 +59,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
     // When we reach here, permissions are granted and we can
     // continue accessing the position of the device.
-    return await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.lowest);
+    return   Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.lowest, timeLimit: Duration(seconds: 0));
   }
 
 
@@ -69,8 +69,13 @@ class _LoadingScreenState extends State<LoadingScreen> {
   /// are denied the `Future` will return an error.
 
   void getlocation() async{
-     await helper_func();
+    try{
+      Future<dynamic> g=await helper_func();}
+    catch(e){
+      print(e);
+    }
     dynamic weatherdata=await WeatherModel().getweatherdata();
+    print('going to location screen');
     Navigator.push(context,MaterialPageRoute(builder: (context){
       return LocationScreen(locationweather:weatherdata);
     }));

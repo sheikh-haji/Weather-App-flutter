@@ -10,11 +10,18 @@ class Location{
   }
   Future<void> getCurrentLocation() async {
     try {
+       print('in location objecthe he');
+       LocationPermission permission;
 
+       // Test if location services are enabled.
+       bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
+       if(serviceEnabled==true){
       Position position = await Geolocator.getCurrentPosition(
-          desiredAccuracy: LocationAccuracy.lowest);
+          desiredAccuracy: LocationAccuracy.bestForNavigation ,timeLimit: Duration(seconds: 5));
       long=position.longitude;
-      lat=position.latitude;
+      lat=position.latitude;}
+
+      print("after gecoding api call");
       // print(position);
     } catch (e) {
       print(e);
