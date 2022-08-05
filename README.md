@@ -1,5 +1,5 @@
 # weather_app
--It is Flutter that uses OpenWeatherMap Api to get the temperature of the user location
+-It is Flutter app that uses OpenWeatherMap Api to get the temperature of the user location
 <br/>
 -it uses Mapbox API to locate the user's location and custom Location by given by the user
 <br />
