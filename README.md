@@ -7,10 +7,10 @@
 <br/>
 
 
+![](https://github.com/sheikh-haji/Weather-App-flutter/blob/master/app.gif)
 
 
 
-https://github.com/sheikh-haji/Weather-App-flutter/blob/master/app.mp4
 
 
 
